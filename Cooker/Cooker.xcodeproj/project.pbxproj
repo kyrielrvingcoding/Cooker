@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C1020941CC90DB40013E0AB /* TYCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1020891CC90DB40013E0AB /* TYCircleCell.m */; };
+		1C1020951CC90DB40013E0AB /* TYCircleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C10208B1CC90DB40013E0AB /* TYCircleCollectionView.m */; };
+		1C1020961CC90DB40013E0AB /* TYCircleCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C10208D1CC90DB40013E0AB /* TYCircleCollectionViewLayout.m */; };
+		1C1020971CC90DB40013E0AB /* TYCircleMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1020901CC90DB40013E0AB /* TYCircleMenu.m */; };
+		1C1020981CC90DB40013E0AB /* TYCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C1020931CC90DB40013E0AB /* TYCircleView.m */; };
+		1C10209C1CC91EBE0013E0AB /* RecipeSortListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C10209A1CC91EBE0013E0AB /* RecipeSortListViewController.m */; };
+		1C10209D1CC91EBE0013E0AB /* RecipeSortListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C10209B1CC91EBE0013E0AB /* RecipeSortListViewController.xib */; };
+		1C1020A01CC91EF00013E0AB /* RecipeDetailListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C10209F1CC91EF00013E0AB /* RecipeDetailListViewController.m */; };
 		1C213EA51CC5C05F00AC6AF7 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C213EA31CC5C05F00AC6AF7 /* BaseCollectionViewCell.m */; };
 		1C213EA61CC5C05F00AC6AF7 /* BaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C213EA41CC5C05F00AC6AF7 /* BaseCollectionViewCell.xib */; };
 		1C213EB01CC6077200AC6AF7 /* CollectionSortListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C213EAE1CC6077200AC6AF7 /* CollectionSortListViewController.m */; };
@@ -113,6 +121,23 @@
 
 /* Begin PBXFileReference section */
 		077C01093CD9071D34C38B6A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		1C1020881CC90DB40013E0AB /* TYCircleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleCell.h; sourceTree = "<group>"; };
+		1C1020891CC90DB40013E0AB /* TYCircleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCircleCell.m; sourceTree = "<group>"; };
+		1C10208A1CC90DB40013E0AB /* TYCircleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleCollectionView.h; sourceTree = "<group>"; };
+		1C10208B1CC90DB40013E0AB /* TYCircleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCircleCollectionView.m; sourceTree = "<group>"; };
+		1C10208C1CC90DB40013E0AB /* TYCircleCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleCollectionViewLayout.h; sourceTree = "<group>"; };
+		1C10208D1CC90DB40013E0AB /* TYCircleCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCircleCollectionViewLayout.m; sourceTree = "<group>"; };
+		1C10208E1CC90DB40013E0AB /* TYCircleMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleMacros.h; sourceTree = "<group>"; };
+		1C10208F1CC90DB40013E0AB /* TYCircleMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleMenu.h; sourceTree = "<group>"; };
+		1C1020901CC90DB40013E0AB /* TYCircleMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCircleMenu.m; sourceTree = "<group>"; };
+		1C1020911CC90DB40013E0AB /* TYCircleProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleProtocol.h; sourceTree = "<group>"; };
+		1C1020921CC90DB40013E0AB /* TYCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYCircleView.h; sourceTree = "<group>"; };
+		1C1020931CC90DB40013E0AB /* TYCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYCircleView.m; sourceTree = "<group>"; };
+		1C1020991CC91EBE0013E0AB /* RecipeSortListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeSortListViewController.h; sourceTree = "<group>"; };
+		1C10209A1CC91EBE0013E0AB /* RecipeSortListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeSortListViewController.m; sourceTree = "<group>"; };
+		1C10209B1CC91EBE0013E0AB /* RecipeSortListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeSortListViewController.xib; sourceTree = "<group>"; };
+		1C10209E1CC91EF00013E0AB /* RecipeDetailListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeDetailListViewController.h; sourceTree = "<group>"; };
+		1C10209F1CC91EF00013E0AB /* RecipeDetailListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailListViewController.m; sourceTree = "<group>"; };
 		1C213EA21CC5C05F00AC6AF7 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseCollectionViewCell.h; path = Cooker/Base/View/BaseCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
 		1C213EA31CC5C05F00AC6AF7 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseCollectionViewCell.m; path = Cooker/Base/View/BaseCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		1C213EA41CC5C05F00AC6AF7 /* BaseCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BaseCollectionViewCell.xib; path = Cooker/Base/View/BaseCollectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -288,6 +313,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C1020871CC90DB40013E0AB /* RecipeSortTools */ = {
+			isa = PBXGroup;
+			children = (
+				1C1020881CC90DB40013E0AB /* TYCircleCell.h */,
+				1C1020891CC90DB40013E0AB /* TYCircleCell.m */,
+				1C10208A1CC90DB40013E0AB /* TYCircleCollectionView.h */,
+				1C10208B1CC90DB40013E0AB /* TYCircleCollectionView.m */,
+				1C10208C1CC90DB40013E0AB /* TYCircleCollectionViewLayout.h */,
+				1C10208D1CC90DB40013E0AB /* TYCircleCollectionViewLayout.m */,
+				1C10208E1CC90DB40013E0AB /* TYCircleMacros.h */,
+				1C10208F1CC90DB40013E0AB /* TYCircleMenu.h */,
+				1C1020901CC90DB40013E0AB /* TYCircleMenu.m */,
+				1C1020911CC90DB40013E0AB /* TYCircleProtocol.h */,
+				1C1020921CC90DB40013E0AB /* TYCircleView.h */,
+				1C1020931CC90DB40013E0AB /* TYCircleView.m */,
+			);
+			path = RecipeSortTools;
+			sourceTree = "<group>";
+		};
 		3D10A63EA7C76BAC03733341 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -554,6 +598,11 @@
 			children = (
 				7708A5A11CC5E0470037F210 /* RecipeViewController.h */,
 				7708A5A21CC5E0470037F210 /* RecipeViewController.m */,
+				1C1020991CC91EBE0013E0AB /* RecipeSortListViewController.h */,
+				1C10209A1CC91EBE0013E0AB /* RecipeSortListViewController.m */,
+				1C10209B1CC91EBE0013E0AB /* RecipeSortListViewController.xib */,
+				1C10209E1CC91EF00013E0AB /* RecipeDetailListViewController.h */,
+				1C10209F1CC91EF00013E0AB /* RecipeDetailListViewController.m */,
 				779379FE1CC755D0009DE91B /* RecipeDetailViewController.h */,
 				779379FF1CC755D0009DE91B /* RecipeDetailViewController.m */,
 			);
@@ -581,6 +630,7 @@
 		772F55A41CC536400048F287 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				1C1020871CC90DB40013E0AB /* RecipeSortTools */,
 				7708A5551CC5C9F00037F210 /* Category */,
 				7708A5271CC5BBCE0037F210 /* PrefixHeader.pch */,
 				1C213EAC1CC5C3EC00AC6AF7 /* URLHeaderDefine.h */,
@@ -811,6 +861,7 @@
 				TargetAttributes = {
 					772F55651CC535A20048F287 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 5DKCYBP42M;
 					};
 					772F557E1CC535A20048F287 = {
 						CreatedOnToolsVersion = 7.2;
@@ -855,6 +906,7 @@
 				7935F5EA1CC8776B00D6842A /* MyselfViewController.xib in Resources */,
 				7935F5EF1CC8A8EF00D6842A /* SnackViewController.xib in Resources */,
 				7935F60C1CC8D4F000D6842A /* VideoTableViewCell.xib in Resources */,
+				1C10209D1CC91EBE0013E0AB /* RecipeSortListViewController.xib in Resources */,
 				1C213EC41CC619E100AC6AF7 /* CollectionSortDetailViewController.xib in Resources */,
 				1C213EA61CC5C05F00AC6AF7 /* BaseCollectionViewCell.xib in Resources */,
 				7935F6161CC8D68B00D6842A /* RecipeDetailFooterView.xib in Resources */,
@@ -946,12 +998,14 @@
 			files = (
 				7993693F1CC729A300B06600 /* CommentTableViewModel.m in Sources */,
 				7935F5F21CC8AFDD00D6842A /* SnackClassesModel.m in Sources */,
+				1C1020A01CC91EF00013E0AB /* RecipeDetailListViewController.m in Sources */,
 				7708A5301CC5BCC20037F210 /* LoginNothingView.m in Sources */,
 				7708A5251CC5BB890037F210 /* BaseTableViewCell.m in Sources */,
 				7708A52A1CC5BC8E0037F210 /* LoginNothingmodel.m in Sources */,
 				1C213EDE1CC6525100AC6AF7 /* NSURL+AppendingURL.m in Sources */,
 				7935F61B1CC8D79000D6842A /* RecipeMaterialCell.m in Sources */,
 				7708A55B1CC5CA870037F210 /* UIView+ChangeFrame.m in Sources */,
+				1C1020951CC90DB40013E0AB /* TYCircleCollectionView.m in Sources */,
 				7935F5E71CC8776B00D6842A /* MyselfHeaderView.m in Sources */,
 				772F55711CC535A20048F287 /* ViewController.m in Sources */,
 				1C85B10C1CC7731300BF8DB9 /* (null) in Sources */,
@@ -960,7 +1014,9 @@
 				1C213ECD1CC61D1C00AC6AF7 /* FactoryTableViewCell.m in Sources */,
 				7935F6101CC8D53400D6842A /* RecipeDetailFooterView.m in Sources */,
 				7935F6141CC8D5C900D6842A /* materialListModel.m in Sources */,
+				1C1020941CC90DB40013E0AB /* TYCircleCell.m in Sources */,
 				7935F61F1CC8D7E400D6842A /* CommentTableViewCell.m in Sources */,
+				1C10209C1CC91EBE0013E0AB /* RecipeSortListViewController.m in Sources */,
 				792B7AEF1CC5C693001C5593 /* RegistNothingViewController.m in Sources */,
 				7935F6131CC8D5B200D6842A /* StepListModel.m in Sources */,
 				792B7D9F1CC666B0001C5593 /* HomeSelectionModel.m in Sources */,
@@ -969,6 +1025,7 @@
 				77937A121CC755EF009DE91B /* RecipeDetailHeaderView.m in Sources */,
 				7935F5F51CC8B13600D6842A /* SnackDetailModel.m in Sources */,
 				1C213EB71CC6092400AC6AF7 /* CollectionSortListModelCell.m in Sources */,
+				1C1020981CC90DB40013E0AB /* TYCircleView.m in Sources */,
 				792B7D961CC66689001C5593 /* NSTimer+Addition.m in Sources */,
 				7935F5F81CC8B44300D6842A /* SnackDetailClassesModelCell.m in Sources */,
 				7708A53C1CC5BD230037F210 /* MYNothingModel.m in Sources */,
@@ -987,10 +1044,12 @@
 				1C213EA51CC5C05F00AC6AF7 /* BaseCollectionViewCell.m in Sources */,
 				7708A52D1CC5BCAA0037F210 /* LoginNothingViewController.m in Sources */,
 				792B7DA21CC66753001C5593 /* HomeRecipeModelCell.m in Sources */,
+				1C1020971CC90DB40013E0AB /* TYCircleMenu.m in Sources */,
 				7708A5421CC5BD500037F210 /* MyNothingView.m in Sources */,
 				772F556B1CC535A20048F287 /* main.m in Sources */,
 				1C213EBC1CC612A500AC6AF7 /* BaseNavigationViewController.m in Sources */,
 				1C213EC31CC619E100AC6AF7 /* CollectionSortDetailViewController.m in Sources */,
+				1C1020961CC90DB40013E0AB /* TYCircleCollectionViewLayout.m in Sources */,
 				7935F60F1CC8D50400D6842A /* VideoModel.m in Sources */,
 				799369481CC7335D00B06600 /* HomeSelectionDetailViewController.m in Sources */,
 				7935F60B1CC8D4F000D6842A /* VideoTableViewCell.m in Sources */,
@@ -1144,11 +1203,14 @@
 			baseConfigurationReference = BC167EAE7C69A3F66EBC64F7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = Cooker/Tools/PrefixHeader.pch;
 				INFOPLIST_FILE = Cooker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cooker.Cooker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1157,11 +1219,14 @@
 			baseConfigurationReference = 077C01093CD9071D34C38B6A /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = Cooker/Tools/PrefixHeader.pch;
 				INFOPLIST_FILE = Cooker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cooker.Cooker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

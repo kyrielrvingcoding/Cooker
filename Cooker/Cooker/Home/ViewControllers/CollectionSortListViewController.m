@@ -87,6 +87,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CollectionSortListModel *listModel = self.listArray[indexPath.row];
     CollectionSortListModelCell *cell = (CollectionSortListModelCell *)[FactoryTableViewCell createTableViewCellWithModel:listModel tableView:tableView indexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell setDataWithModel:listModel];
     return cell;
 }

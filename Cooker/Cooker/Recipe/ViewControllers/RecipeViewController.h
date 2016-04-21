@@ -7,7 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "TYCircleCollectionView.h"
 
 @interface RecipeViewController : BaseViewController
+
+@property (nonatomic, strong) TYCircleCollectionView *collectionView;
+
+@property (nonatomic, copy) NSArray *items;
 
 @end
