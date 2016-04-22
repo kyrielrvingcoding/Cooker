@@ -97,12 +97,6 @@
 		7935F61B1CC8D79000D6842A /* RecipeMaterialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7935F61A1CC8D79000D6842A /* RecipeMaterialCell.m */; };
 		7935F61F1CC8D7E400D6842A /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7935F61D1CC8D7E400D6842A /* CommentTableViewCell.m */; };
 		7935F6201CC8D7E400D6842A /* CommentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7935F61E1CC8D7E400D6842A /* CommentTableViewCell.xib */; };
-		7965640A1CC9B6A000AD0249 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 796564041CC9B6A000AD0249 /* 1.png */; };
-		7965640B1CC9B6A000AD0249 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 796564051CC9B6A000AD0249 /* 2.png */; };
-		7965640C1CC9B6A000AD0249 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 796564061CC9B6A000AD0249 /* 3.png */; };
-		7965640D1CC9B6A000AD0249 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 796564071CC9B6A000AD0249 /* 4.png */; };
-		7965640E1CC9B6A000AD0249 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 796564081CC9B6A000AD0249 /* 5.png */; };
-		7965640F1CC9B6A000AD0249 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 796564091CC9B6A000AD0249 /* 6.png */; };
 		7993693F1CC729A300B06600 /* CommentTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7993693D1CC7296100B06600 /* CommentTableViewModel.m */; };
 		799369481CC7335D00B06600 /* HomeSelectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799369461CC7335D00B06600 /* HomeSelectionDetailViewController.m */; };
 		799369491CC7335D00B06600 /* HomeSelectionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799369471CC7335D00B06600 /* HomeSelectionDetailViewController.xib */; };
@@ -284,12 +278,6 @@
 		7935F61C1CC8D7E400D6842A /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		7935F61D1CC8D7E400D6842A /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		7935F61E1CC8D7E400D6842A /* CommentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentTableViewCell.xib; sourceTree = "<group>"; };
-		796564041CC9B6A000AD0249 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
-		796564051CC9B6A000AD0249 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
-		796564061CC9B6A000AD0249 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
-		796564071CC9B6A000AD0249 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
-		796564081CC9B6A000AD0249 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
-		796564091CC9B6A000AD0249 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
 		7993693C1CC7296100B06600 /* CommentTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewModel.h; sourceTree = "<group>"; };
 		7993693D1CC7296100B06600 /* CommentTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewModel.m; sourceTree = "<group>"; };
 		799369451CC7335D00B06600 /* HomeSelectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeSelectionDetailViewController.h; sourceTree = "<group>"; };
@@ -510,12 +498,6 @@
 				772F55751CC535A20048F287 /* Assets.xcassets */,
 				772F55771CC535A20048F287 /* LaunchScreen.storyboard */,
 				772F557A1CC535A20048F287 /* Info.plist */,
-				796564041CC9B6A000AD0249 /* 1.png */,
-				796564051CC9B6A000AD0249 /* 2.png */,
-				796564061CC9B6A000AD0249 /* 3.png */,
-				796564071CC9B6A000AD0249 /* 4.png */,
-				796564081CC9B6A000AD0249 /* 5.png */,
-				796564091CC9B6A000AD0249 /* 6.png */,
 				772F55691CC535A20048F287 /* Supporting Files */,
 			);
 			path = Cooker;
@@ -918,9 +900,7 @@
 			files = (
 				7935F5FA1CC8B45400D6842A /* SnackDetailClassesModelCell.xib in Resources */,
 				792B7DA31CC66753001C5593 /* HomeRecipeModelCell.xib in Resources */,
-				7965640B1CC9B6A000AD0249 /* 2.png in Resources */,
 				792B7AF01CC5C693001C5593 /* RegistNothingViewController.xib in Resources */,
-				7965640E1CC9B6A000AD0249 /* 5.png in Resources */,
 				1C213EB91CC6094700AC6AF7 /* CollectionSortListModelCell.xib in Resources */,
 				772F55791CC535A20048F287 /* LaunchScreen.storyboard in Resources */,
 				7935F5EA1CC8776B00D6842A /* MyselfViewController.xib in Resources */,
@@ -928,18 +908,14 @@
 				7935F60C1CC8D4F000D6842A /* VideoTableViewCell.xib in Resources */,
 				1C10209D1CC91EBE0013E0AB /* RecipeSortListViewController.xib in Resources */,
 				1C213EC41CC619E100AC6AF7 /* CollectionSortDetailViewController.xib in Resources */,
-				7965640C1CC9B6A000AD0249 /* 3.png in Resources */,
 				1C213EA61CC5C05F00AC6AF7 /* BaseCollectionViewCell.xib in Resources */,
-				7965640F1CC9B6A000AD0249 /* 6.png in Resources */,
 				7935F6161CC8D68B00D6842A /* RecipeDetailFooterView.xib in Resources */,
 				1C213EE81CC679B000AC6AF7 /* CollectionSortDrtailFooterView.xib in Resources */,
 				7708A5261CC5BB890037F210 /* BaseTableViewCell.xib in Resources */,
 				7935F5E81CC8776B00D6842A /* MyselfHeaderView.xib in Resources */,
 				7935F6181CC8D6B100D6842A /* RecipeMaterialCell.xib in Resources */,
-				7965640D1CC9B6A000AD0249 /* 4.png in Resources */,
 				1C213EB11CC6077200AC6AF7 /* CollectionSortListViewController.xib in Resources */,
 				7708A51E1CC5BB500037F210 /* BaseViewController.xib in Resources */,
-				7965640A1CC9B6A000AD0249 /* 1.png in Resources */,
 				77937A131CC755EF009DE91B /* RecipeDetailHeaderView.xib in Resources */,
 				1C85B10E1CC7732D00BF8DB9 /* (null) in Resources */,
 				7935F6201CC8D7E400D6842A /* CommentTableViewCell.xib in Resources */,

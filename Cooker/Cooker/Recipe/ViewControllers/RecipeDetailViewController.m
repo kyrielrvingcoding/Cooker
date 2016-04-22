@@ -28,6 +28,7 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
 @implementation RecipeDetailViewController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self startAnimation];
 }
 
