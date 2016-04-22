@@ -29,6 +29,9 @@
 
 @property (nonatomic, strong) UIScrollView *rootScrollView;
 
+@property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UIView *containerView;
+
 @end
 
 @implementation HomeViewController
@@ -112,7 +115,7 @@
 
 //创建RootScrollView
 - (void)createRootScrollView {
-    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - 49)];
+    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT - 49)];
     _rootScrollView.delegate = self;
     _rootScrollView.contentSize = CGSizeMake(SCREENWIDTH,  2864);
     _rootScrollView.contentOffset = CGPointMake(0, 0);
@@ -142,6 +145,59 @@
     [self creatTableViewHeaderView];
     
 }
+
+- (void)createAnimationForTansition {
+    
+    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
+    _containerView.backgroundColor = [UIColor whiteColor];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0 , 0, SCREENWIDTH,SCREENHEIGHT)];
+    [_containerView addSubview:_imageView];
+    //设置动画帧
+    _imageView.animationImages=[NSArray arrayWithObjects:
+                               [UIImage imageNamed:@"1"],
+                               [UIImage imageNamed:@"2"],
+                               [UIImage imageNamed:@"3"],
+                               [UIImage imageNamed:@"4"],
+                               [UIImage imageNamed:@"5"],
+                               [UIImage imageNamed:@"6"],
+                               nil ];
+    
+    
+    
+   UILabel *Infolabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 320, SCREENWIDTH, 20)];
+    Infolabel.backgroundColor = [UIColor clearColor];
+    Infolabel.textAlignment = NSTextAlignmentCenter;
+    Infolabel.textColor = [UIColor colorWithRed:84.0/255 green:86./255 blue:212./255 alpha:1];
+    Infolabel.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:10.0f];
+    Infolabel.text = @"正在努力加载";
+    [_containerView addSubview:Infolabel];
+    
+    [self.view addSubview:_containerView];
+
+   
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [_containerView removeFromSuperview];
+    [_imageView stopAnimating];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    
+    //设置动画总时间
+    _imageView.animationDuration= 1;
+    //设置重复次数,0表示不重复
+    _imageView.animationRepeatCount=0;
+    //开始动画
+//    [_imageView startAnimating];
+    [self createAnimationForTansition];
+    [_imageView startAnimating];
+}
+
+
+
+
 
 //头视图
 - (UIView *)headerViewWithLabeltext:(NSString *)labeltext Titletext:(NSString *)titletext frameY:(CGFloat)frameY action:(SEL)action {
@@ -283,13 +339,13 @@
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     //最小行间距
-    layout.minimumLineSpacing = 30;
+    layout.minimumLineSpacing = 20;
     //最小列间距
     layout.minimumInteritemSpacing = 10;
     //滚动方向
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     //item的大小
-    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, 270 );
+    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, SCREENWIDTH / 2 + 40);
     //边距
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
@@ -372,11 +428,13 @@
 
 //点击跳转到详情
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
+    
     RecipeDetailViewController *recipeDetailVC = [[RecipeDetailViewController alloc] init];
     HomeRecipeModel *model = self.everydayRecipeArray[indexPath.row];
     recipeDetailVC.ID = model.ID;
+
     [self.navigationController pushViewController:recipeDetailVC animated:YES];
+    
 }
 
 - (void)didReceiveMemoryWarning {
