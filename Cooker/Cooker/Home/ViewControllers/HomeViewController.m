@@ -18,7 +18,7 @@
 #import "RecipeDetailViewController.h"
 #import "CollectionSortDetailViewController.h"
 #define kColletionViewHeight (SCREENWIDTH / 2 + 40)
-#define kTotalCollectionViewHeight ((_everydayRecipeArray.count + 1)/2 * kColletionViewHeight)
+#define kTotalCollectionViewHeight ((_everydayRecipeArray.count + 1)/2 * kColletionViewHeight )
 #define kTotalTableViewHeight (350 * _selectionArray.count)
 
 @interface HomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -105,8 +105,8 @@
         
         //轮播图
         [self createCycleScrollView];
-        _collectionView.frame = CGRectMake(0, _cycleScrollView.frame.size.height + 40, SCREENWIDTH, kTotalCollectionViewHeight);
-        _tableView.frame = CGRectMake(0, _cycleScrollView.frame.size.height + 80 + kTotalCollectionViewHeight, SCREENWIDTH, kTotalTableViewHeight);
+        _collectionView.frame = CGRectMake(0, _cycleScrollView.frame.size.height + 40, SCREENWIDTH, kTotalCollectionViewHeight + 60);
+        _tableView.frame = CGRectMake(0, _cycleScrollView.frame.size.height  + kTotalCollectionViewHeight + 70, SCREENWIDTH, kTotalTableViewHeight );
         _rootScrollView.contentSize = CGSizeMake(SCREENWIDTH,  280 + kTotalCollectionViewHeight + kTotalTableViewHeight);
         
         [self.tableView reloadData];
@@ -118,6 +118,7 @@
     }];
     
 }
+
 
 //创建RootScrollView
 - (void)createRootScrollView {
@@ -222,7 +223,7 @@
 //创建TableView头视图
 - (void)creatTableViewHeaderView {
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 274, SCREENWIDTH, 40)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 40)];
     UIImageView *leftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 10, view.frame.size.height-5)];
     leftImageView.backgroundColor = [UIColor orangeColor];
     leftImageView.layer.cornerRadius = 5;
@@ -303,7 +304,7 @@
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     //最小行间距
-    layout.minimumLineSpacing = 20;
+    layout.minimumLineSpacing = 0;
     //最小列间距
     layout.minimumInteritemSpacing = 10;
     //滚动方向
@@ -311,7 +312,7 @@
     //item的大小
     layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, kColletionViewHeight);
     //边距
-    layout.sectionInset = UIEdgeInsetsMake(0, 10, 10, 0);
+    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 0);
     
     
     _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
@@ -329,8 +330,7 @@
     [_collectionView registerNib:[UINib nibWithNibName:@"HomeRecipeModelCell" bundle:nil] forCellWithReuseIdentifier:@"RecipeCell"];
     
     [_rootScrollView addSubview:_collectionView];
-    
-    
+
 }
 
 //创建精选菜单

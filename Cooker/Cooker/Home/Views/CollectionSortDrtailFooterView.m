@@ -27,7 +27,7 @@
 - (void)setDataArray:(NSMutableArray *)dataArray {
     _dataArray = dataArray;
     [self.footTableView reloadData];
-    _countLabel.text = [NSString stringWithFormat:@"评论(%ld)", self.dataArray.count];
+    _countLabel.text = [NSString stringWithFormat:@"评论(%ld)", (unsigned long)self.dataArray.count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
