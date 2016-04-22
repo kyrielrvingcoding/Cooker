@@ -87,15 +87,13 @@
 //    [self createTableView];
     self.navigationController.navigationBar.translucent = NO;
     [self createCollectionView];
-    
+    [self startAnimation];
     [self requestData];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self startAnimation];
-}
+
 - (void)delay {
     [self stopAnimation];
     [self.collectionView reloadData];
