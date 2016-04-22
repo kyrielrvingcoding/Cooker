@@ -22,7 +22,7 @@
         _imageView.clipsToBounds = YES;
         [self.contentView addSubview:_imageView];
         
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.bounds.size.height-10, (self.bounds.size.height-20)/2, 80, 20)];
+        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.bounds.size.height-10, (self.bounds.size.height-20)/2, 70, 20)];
         _titleLabel.font = [UIFont systemFontOfSize:16.0f];
         _titleLabel.textColor = [UIColor blueColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;

@@ -29,9 +29,6 @@
 
 @property (nonatomic, strong) UIScrollView *rootScrollView;
 
-@property (nonatomic, strong) UIImageView *imageView;
-@property (nonatomic, strong) UIView *containerView;
-
 @end
 
 @implementation HomeViewController
@@ -145,58 +142,6 @@
     [self creatTableViewHeaderView];
     
 }
-
-- (void)createAnimationForTansition {
-    
-    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
-    _containerView.backgroundColor = [UIColor whiteColor];
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0 , 0, SCREENWIDTH,SCREENHEIGHT)];
-    [_containerView addSubview:_imageView];
-    //设置动画帧
-    _imageView.animationImages=[NSArray arrayWithObjects:
-                               [UIImage imageNamed:@"1"],
-                               [UIImage imageNamed:@"2"],
-                               [UIImage imageNamed:@"3"],
-                               [UIImage imageNamed:@"4"],
-                               [UIImage imageNamed:@"5"],
-                               [UIImage imageNamed:@"6"],
-                               nil ];
-    
-    
-    
-   UILabel *Infolabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 320, SCREENWIDTH, 20)];
-    Infolabel.backgroundColor = [UIColor clearColor];
-    Infolabel.textAlignment = NSTextAlignmentCenter;
-    Infolabel.textColor = [UIColor colorWithRed:84.0/255 green:86./255 blue:212./255 alpha:1];
-    Infolabel.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:10.0f];
-    Infolabel.text = @"正在努力加载";
-    [_containerView addSubview:Infolabel];
-    
-    [self.view addSubview:_containerView];
-
-   
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [_containerView removeFromSuperview];
-    [_imageView stopAnimating];
-}
-- (void)viewWillDisappear:(BOOL)animated {
-    
-    
-    //设置动画总时间
-    _imageView.animationDuration= 1;
-    //设置重复次数,0表示不重复
-    _imageView.animationRepeatCount=0;
-    //开始动画
-//    [_imageView startAnimating];
-    [self createAnimationForTansition];
-    [_imageView startAnimating];
-}
-
-
-
 
 
 //头视图
