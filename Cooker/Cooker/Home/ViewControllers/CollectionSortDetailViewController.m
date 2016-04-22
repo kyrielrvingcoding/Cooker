@@ -163,7 +163,7 @@
         reusableView.timeLabel.text = _dataDic[@"time"];
         reusableView.descriptionLabel.text = _dataDic[@"description"];
         [reusableView.authorImageView sd_setImageWithURL:[NSURL stringAppendingToURLWithString:_dataDic[@"userimageid"]]];
-        reusableView.recipeCountLabel.text = [NSString stringWithFormat:@"菜谱(%ld)", _collectionListArray.count];
+        reusableView.recipeCountLabel.text = [NSString stringWithFormat:@"菜谱(%ld)", (unsigned long)_collectionListArray.count];
         
         return reusableView;
     } else {

@@ -23,53 +23,51 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="菜名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5zo-aP-kK9">
-                        <rect key="frame" x="182" y="28" width="36" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="gE5-ad-xBe"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <rect key="frame" x="183" y="18" width="32" height="31"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="收藏  10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ros-AF-iia">
-                        <rect key="frame" x="182" y="113" width="91.5" height="18.5"/>
+                        <rect key="frame" x="183" y="114" width="92" height="18"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="91.5" id="1sb-bu-tzB"/>
                             <constraint firstAttribute="height" constant="18" id="ogr-yY-AK9"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜欢 10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtJ-Y6-MB6">
-                        <rect key="frame" x="293" y="113" width="85" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="85" id="8Pn-2W-2eF"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="描述" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="60p-GT-v9a">
-                        <rect key="frame" x="182" y="58.5" width="237" height="42"/>
+                        <rect key="frame" x="183" y="57" width="236" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="42" id="9J7-oG-Wnl"/>
+                            <constraint firstAttribute="height" constant="35" id="9J7-oG-Wnl"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喜欢 10000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WtJ-Y6-MB6">
+                        <rect key="frame" x="270" y="116" width="85" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="8Pn-2W-2eF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="ros-AF-iia" firstAttribute="bottom" secondItem="GtH-8U-5aW" secondAttribute="bottom" constant="-10" id="63K-ZI-dCr"/>
-                    <constraint firstItem="5zo-aP-kK9" firstAttribute="top" secondItem="GtH-8U-5aW" secondAttribute="top" constant="10" id="K0o-Zh-Cz0"/>
-                    <constraint firstItem="WtJ-Y6-MB6" firstAttribute="centerY" secondItem="ros-AF-iia" secondAttribute="centerY" id="Qs4-2Y-BPI"/>
-                    <constraint firstItem="WtJ-Y6-MB6" firstAttribute="leading" secondItem="ros-AF-iia" secondAttribute="trailing" constant="20" id="TgV-83-aVN"/>
+                    <constraint firstItem="5zo-aP-kK9" firstAttribute="top" secondItem="GtH-8U-5aW" secondAttribute="top" id="K0o-Zh-Cz0"/>
+                    <constraint firstItem="WtJ-Y6-MB6" firstAttribute="centerY" secondItem="ros-AF-iia" secondAttribute="centerY" constant="1" id="Qs4-2Y-BPI"/>
+                    <constraint firstItem="WtJ-Y6-MB6" firstAttribute="leading" secondItem="ros-AF-iia" secondAttribute="trailing" constant="-5" id="TgV-83-aVN"/>
                     <constraint firstAttribute="bottomMargin" secondItem="GtH-8U-5aW" secondAttribute="bottom" constant="10" id="YSm-yU-XTD"/>
                     <constraint firstAttribute="trailingMargin" secondItem="60p-GT-v9a" secondAttribute="trailing" constant="30" id="efS-Zw-3Al"/>
+                    <constraint firstItem="60p-GT-v9a" firstAttribute="top" secondItem="5zo-aP-kK9" secondAttribute="bottom" constant="8" id="fbp-gc-8mM"/>
                     <constraint firstItem="GtH-8U-5aW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="g9O-J0-xrb"/>
                     <constraint firstItem="GtH-8U-5aW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="j2O-Cq-lyq"/>
-                    <constraint firstItem="60p-GT-v9a" firstAttribute="centerY" secondItem="GtH-8U-5aW" secondAttribute="centerY" id="jIk-qj-cgI"/>
+                    <constraint firstItem="60p-GT-v9a" firstAttribute="centerY" secondItem="GtH-8U-5aW" secondAttribute="centerY" constant="-5.5" id="jIk-qj-cgI"/>
                     <constraint firstItem="60p-GT-v9a" firstAttribute="leading" secondItem="GtH-8U-5aW" secondAttribute="trailing" constant="10" id="p4D-V0-AyQ"/>
                     <constraint firstItem="ros-AF-iia" firstAttribute="leading" secondItem="GtH-8U-5aW" secondAttribute="trailing" constant="10" id="pwC-6k-9dt"/>
                     <constraint firstItem="5zo-aP-kK9" firstAttribute="leading" secondItem="GtH-8U-5aW" secondAttribute="trailing" constant="10" id="ztb-Zz-V2P"/>
@@ -82,7 +80,7 @@
                 <outlet property="likeCount" destination="WtJ-Y6-MB6" id="NB4-Kk-YtD"/>
                 <outlet property="name" destination="5zo-aP-kK9" id="6zc-dS-B4N"/>
             </connections>
-            <point key="canvasLocation" x="299.5" y="216"/>
+            <point key="canvasLocation" x="243.5" y="186"/>
         </tableViewCell>
     </objects>
 </document>

@@ -16,19 +16,22 @@ static NSString *RecipeMaterialCellReuseIdentifier = @"RecipeMaterialCellReuseId
 
 @implementation RecipeDetailHeaderView
 
-
+- (void)awakeFromNib {
+}
 - (void)setModel:(BaseModel *)model {
     
     if (model == nil) {
         return;
     }
+    RecipeDetailModel *detailModel = (RecipeDetailModel *)model;
     self.materialTabelView.dataSource = self;
     self.materialTabelView.delegate = self;
     self.materialTabelView.bounces = NO;
     self.materialTabelView.separatorStyle  = UITableViewCellSeparatorStyleNone;
+    self.materialTabelView.height = self.recipeDetailModel.materialListModelArray.count;
     [self.materialTabelView registerNib:[UINib nibWithNibName:@"RecipeMaterialCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:RecipeMaterialCellReuseIdentifier];
 
-    RecipeDetailModel *detailModel = (RecipeDetailModel *)model;
+
     self.titleLabel.text = detailModel.name;
     
     self.iconName.text = detailModel.authorname;

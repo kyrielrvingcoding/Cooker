@@ -8,10 +8,11 @@
 
 #import "RecipeDetailStepCell.h"
 
-#define describeLabelWidth 250
+
 @implementation RecipeDetailStepCell
 
 - (void)awakeFromNib {
+
     // Initialization code
 }
 
@@ -60,11 +61,11 @@
         self.picImage.layer.masksToBounds = YES;
         self.picImage.layer.cornerRadius = 20;
         [self.contentView addSubview:self.picImage];
-        self.describeLabel.frame = CGRectMake(70, 230, describeLabelWidth + 50, [RecipeDetailStepCell getHeigntWith:self.describeLabel.text]);
+        self.describeLabel.frame = CGRectMake(70, 230, describeLabelWidth + 20, [RecipeDetailStepCell getHeigntWith:self.describeLabel.text]);
         [self.contentView addSubview:self.describeLabel];
     } else {
         [self.contentView addSubview:self.describeLabel];
-        self.describeLabel.frame = CGRectMake(70, 15, describeLabelWidth + 50, [RecipeDetailStepCell getHeigntWith:self.describeLabel.text]);
+        self.describeLabel.frame = CGRectMake(70, 15, describeLabelWidth + 20, [RecipeDetailStepCell getHeigntWith:self.describeLabel.text]);
     }
     
     self.stepLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row + 1];
