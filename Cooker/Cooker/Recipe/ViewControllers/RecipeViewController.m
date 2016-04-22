@@ -9,6 +9,7 @@
 #import "RecipeViewController.h"
 #import "TYCircleCell.h"
 #import "TYCircleMenu.h"
+#import "LatestAndHotestListViewController.h"
 
 @interface RecipeViewController () <TYCircleMenuDelegate>
 
@@ -41,7 +42,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createCircleMenu];
-    _latestImageView = [self createTypeImageViewWithFrame:CGRectMake(0, 64, SCREENWIDTH / 2, 80) labelText:@"周最新" action:@selector(clickLatestImageView:)];
+    _latestImageView = [self createTypeImageViewWithFrame:CGRectMake(0, 64, SCREENWIDTH / 2, 80) labelText:@"新鲜菜" action:@selector(clickLatestImageView:)];
     _hotestImageView = [self createTypeImageViewWithFrame:CGRectMake(SCREENWIDTH / 2, 64, SCREENWIDTH / 2, 80) labelText:@"周最热" action:@selector(clickHotestImageView:)];
     [self requestData];
 }
@@ -78,12 +79,15 @@
 
 //手势的点击方法
 - (void)clickLatestImageView:(UIGestureRecognizer *)gesture {
-    
-    
+    LatestAndHotestListViewController *listVC = [[LatestAndHotestListViewController alloc] init];
+    listVC.type = @"latest";
+    [self.navigationController pushViewController:listVC animated:YES];
 }
 
 - (void)clickHotestImageView:(UIGestureRecognizer *)gesture {
-    NSLog(@"2");
+    LatestAndHotestListViewController *listVC = [[LatestAndHotestListViewController alloc] init];
+    listVC.type = @"hotest";
+    [self.navigationController pushViewController:listVC animated:YES];
 }
 
 - (void)selectMenuAtIndex:(NSInteger)index {

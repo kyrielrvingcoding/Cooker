@@ -34,6 +34,11 @@
 		1C213EE31CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C213EE11CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.xib */; };
 		1C213EE71CC679B000AC6AF7 /* CollectionSortDrtailFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C213EE51CC679B000AC6AF7 /* CollectionSortDrtailFooterView.m */; };
 		1C213EE81CC679B000AC6AF7 /* CollectionSortDrtailFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C213EE61CC679B000AC6AF7 /* CollectionSortDrtailFooterView.xib */; };
+		1C51B5C61CCA22EF00D1EFF4 /* RecipeListTableViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B5C51CCA22EF00D1EFF4 /* RecipeListTableViewModel.m */; };
+		1C51B5CA1CCA235500D1EFF4 /* RecipeListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B5C81CCA235500D1EFF4 /* RecipeListTableViewCell.m */; };
+		1C51B5CB1CCA235500D1EFF4 /* RecipeListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C51B5C91CCA235500D1EFF4 /* RecipeListTableViewCell.xib */; };
+		1C51B5D01CCA239800D1EFF4 /* LatestAndHotestListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B5CD1CCA239800D1EFF4 /* LatestAndHotestListViewController.m */; };
+		1C51B5D11CCA239800D1EFF4 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C51B5CF1CCA239800D1EFF4 /* RecipeViewController.m */; };
 		1C85B10C1CC7731300BF8DB9 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1C85B10E1CC7732D00BF8DB9 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		4D4BA3A9B7F6C12A01AA9B4B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF4C1A6EBA56EFDC0614CC8 /* libPods.a */; };
@@ -50,7 +55,6 @@
 		7708A55A1CC5CA870037F210 /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708A5571CC5CA870037F210 /* UIBarButtonItem+Extension.m */; };
 		7708A55B1CC5CA870037F210 /* UIView+ChangeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708A5591CC5CA870037F210 /* UIView+ChangeFrame.m */; };
 		7708A59D1CC5E0230037F210 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708A59C1CC5E0230037F210 /* HomeViewController.m */; };
-		7708A5A31CC5E0470037F210 /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708A5A21CC5E0470037F210 /* RecipeViewController.m */; };
 		7708A5A61CC5E05A0037F210 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708A5A51CC5E05A0037F210 /* VideoViewController.m */; };
 		772F556B1CC535A20048F287 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 772F556A1CC535A20048F287 /* main.m */; };
 		772F556E1CC535A20048F287 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 772F556D1CC535A20048F287 /* AppDelegate.m */; };
@@ -181,6 +185,15 @@
 		1C213EE41CC679B000AC6AF7 /* CollectionSortDrtailFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionSortDrtailFooterView.h; sourceTree = "<group>"; };
 		1C213EE51CC679B000AC6AF7 /* CollectionSortDrtailFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionSortDrtailFooterView.m; sourceTree = "<group>"; };
 		1C213EE61CC679B000AC6AF7 /* CollectionSortDrtailFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionSortDrtailFooterView.xib; sourceTree = "<group>"; };
+		1C51B5C41CCA22EF00D1EFF4 /* RecipeListTableViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListTableViewModel.h; sourceTree = "<group>"; };
+		1C51B5C51CCA22EF00D1EFF4 /* RecipeListTableViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListTableViewModel.m; sourceTree = "<group>"; };
+		1C51B5C71CCA235500D1EFF4 /* RecipeListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListTableViewCell.h; sourceTree = "<group>"; };
+		1C51B5C81CCA235500D1EFF4 /* RecipeListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListTableViewCell.m; sourceTree = "<group>"; };
+		1C51B5C91CCA235500D1EFF4 /* RecipeListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListTableViewCell.xib; sourceTree = "<group>"; };
+		1C51B5CC1CCA239800D1EFF4 /* LatestAndHotestListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestAndHotestListViewController.h; sourceTree = "<group>"; };
+		1C51B5CD1CCA239800D1EFF4 /* LatestAndHotestListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestAndHotestListViewController.m; sourceTree = "<group>"; };
+		1C51B5CE1CCA239800D1EFF4 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		1C51B5CF1CCA239800D1EFF4 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		7708A51A1CC5BB500037F210 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		7708A51B1CC5BB500037F210 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		7708A51C1CC5BB500037F210 /* BaseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
@@ -206,8 +219,6 @@
 		7708A5591CC5CA870037F210 /* UIView+ChangeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ChangeFrame.m"; sourceTree = "<group>"; };
 		7708A59B1CC5E0230037F210 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7708A59C1CC5E0230037F210 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		7708A5A11CC5E0470037F210 /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
-		7708A5A21CC5E0470037F210 /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
 		7708A5A41CC5E05A0037F210 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
 		7708A5A51CC5E05A0037F210 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		772F55661CC535A20048F287 /* Cooker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cooker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -618,6 +629,8 @@
 				77937A281CC76DA5009DE91B /* RecipeDetailModel.m */,
 				77937A2D1CC77112009DE91B /* StepListModel.h */,
 				77937A2E1CC77112009DE91B /* StepListModel.m */,
+				1C51B5C41CCA22EF00D1EFF4 /* RecipeListTableViewModel.h */,
+				1C51B5C51CCA22EF00D1EFF4 /* RecipeListTableViewModel.m */,
 				77937A301CC77129009DE91B /* materialListModel.h */,
 				77937A311CC77129009DE91B /* materialListModel.m */,
 			);
@@ -627,8 +640,10 @@
 		772F55A21CC536400048F287 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				7708A5A11CC5E0470037F210 /* RecipeViewController.h */,
-				7708A5A21CC5E0470037F210 /* RecipeViewController.m */,
+				1C51B5CC1CCA239800D1EFF4 /* LatestAndHotestListViewController.h */,
+				1C51B5CD1CCA239800D1EFF4 /* LatestAndHotestListViewController.m */,
+				1C51B5CE1CCA239800D1EFF4 /* RecipeViewController.h */,
+				1C51B5CF1CCA239800D1EFF4 /* RecipeViewController.m */,
 				1C1020991CC91EBE0013E0AB /* RecipeSortListViewController.h */,
 				1C10209A1CC91EBE0013E0AB /* RecipeSortListViewController.m */,
 				1C10209B1CC91EBE0013E0AB /* RecipeSortListViewController.xib */,
@@ -651,6 +666,9 @@
 				77937A061CC755EF009DE91B /* RecipeDetailHeaderView.xib */,
 				77937A1F1CC764E2009DE91B /* RecipeDetailStepCell.h */,
 				77937A201CC764E2009DE91B /* RecipeDetailStepCell.m */,
+				1C51B5C71CCA235500D1EFF4 /* RecipeListTableViewCell.h */,
+				1C51B5C81CCA235500D1EFF4 /* RecipeListTableViewCell.m */,
+				1C51B5C91CCA235500D1EFF4 /* RecipeListTableViewCell.xib */,
 				7935F6171CC8D6B100D6842A /* RecipeMaterialCell.xib */,
 				7935F6191CC8D79000D6842A /* RecipeMaterialCell.h */,
 				7935F61A1CC8D79000D6842A /* RecipeMaterialCell.m */,
@@ -941,6 +959,7 @@
 				7965640E1CC9B6A000AD0249 /* 5.png in Resources */,
 				1C213EB91CC6094700AC6AF7 /* CollectionSortListModelCell.xib in Resources */,
 				772F55791CC535A20048F287 /* LaunchScreen.storyboard in Resources */,
+				1C51B5CB1CCA235500D1EFF4 /* RecipeListTableViewCell.xib in Resources */,
 				7935F5EA1CC8776B00D6842A /* MyselfViewController.xib in Resources */,
 				7935F5EF1CC8A8EF00D6842A /* SnackViewController.xib in Resources */,
 				7935F60C1CC8D4F000D6842A /* VideoTableViewCell.xib in Resources */,
@@ -1063,7 +1082,6 @@
 				792B7AEF1CC5C693001C5593 /* RegistNothingViewController.m in Sources */,
 				7935F6131CC8D5B200D6842A /* StepListModel.m in Sources */,
 				792B7D9F1CC666B0001C5593 /* HomeSelectionModel.m in Sources */,
-				7708A5A31CC5E0470037F210 /* RecipeViewController.m in Sources */,
 				1C213EB41CC6089000AC6AF7 /* CollectionSortListModel.m in Sources */,
 				77937A121CC755EF009DE91B /* RecipeDetailHeaderView.m in Sources */,
 				7935F5F51CC8B13600D6842A /* SnackDetailModel.m in Sources */,
@@ -1078,6 +1096,7 @@
 				1C213ED81CC6372F00AC6AF7 /* CollectionSortDetailModel.m in Sources */,
 				77937A001CC755D0009DE91B /* RecipeDetailViewController.m in Sources */,
 				1C213EE21CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.m in Sources */,
+				1C51B5D01CCA239800D1EFF4 /* LatestAndHotestListViewController.m in Sources */,
 				7708A5A61CC5E05A0037F210 /* VideoViewController.m in Sources */,
 				792B7D9D1CC666B0001C5593 /* HomeCarouselModel.m in Sources */,
 				1C213EB01CC6077200AC6AF7 /* CollectionSortListViewController.m in Sources */,
@@ -1093,6 +1112,8 @@
 				1C213EBC1CC612A500AC6AF7 /* BaseNavigationViewController.m in Sources */,
 				1C213EC31CC619E100AC6AF7 /* CollectionSortDetailViewController.m in Sources */,
 				1C1020961CC90DB40013E0AB /* TYCircleCollectionViewLayout.m in Sources */,
+				1C51B5D11CCA239800D1EFF4 /* RecipeViewController.m in Sources */,
+				1C51B5CA1CCA235500D1EFF4 /* RecipeListTableViewCell.m in Sources */,
 				7935F60F1CC8D50400D6842A /* VideoModel.m in Sources */,
 				799369481CC7335D00B06600 /* HomeSelectionDetailViewController.m in Sources */,
 				7935F60B1CC8D4F000D6842A /* VideoTableViewCell.m in Sources */,
@@ -1104,6 +1125,7 @@
 				1C213EBF1CC6142900AC6AF7 /* BaseTabBarController.m in Sources */,
 				77D713321CC9B19300ED3CF7 /* AVPlayerController.m in Sources */,
 				7708A59D1CC5E0230037F210 /* HomeViewController.m in Sources */,
+				1C51B5C61CCA22EF00D1EFF4 /* RecipeListTableViewModel.m in Sources */,
 				7935F6051CC8B76B00D6842A /* SnackDetailModelCell.m in Sources */,
 				1C213EE71CC679B000AC6AF7 /* CollectionSortDrtailFooterView.m in Sources */,
 			);
