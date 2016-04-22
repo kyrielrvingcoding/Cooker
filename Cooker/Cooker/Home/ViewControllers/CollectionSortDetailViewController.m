@@ -85,6 +85,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    [self createTableView];
+    self.navigationController.navigationBar.translucent = NO;
     [self createCollectionView];
     
     [self requestData];
@@ -106,11 +107,13 @@
     _layout = [[UICollectionViewFlowLayout alloc] init];
     _layout.minimumLineSpacing = 10;
     _layout.minimumInteritemSpacing = 10;
+    _layout.itemSize =  CGSizeMake((SCREENWIDTH - 45) / 3, (SCREENWIDTH - 45) / 3 + 25);
+    _layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
     _layout.itemSize = CGSizeMake((SCREENWIDTH - 45) / 3, (SCREENWIDTH - 45) / 3 + 25);
     _layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     _collectionView = [[UICollectionView alloc] initWithFrame:SCREENBOUNDS collectionViewLayout:_layout];
-//    NSLog(@"%f", _collectionView.height);
-    _collectionView.backgroundColor = [UIColor whiteColor];
+
+    _collectionView.backgroundColor = [UIColor redColor];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     [_collectionView registerClass:[CollectionSortDetailModelCell class] forCellWithReuseIdentifier:NSStringFromClass([CollectionSortDetailModel class])];
@@ -161,6 +164,7 @@
         reusableView.descriptionLabel.text = _dataDic[@"description"];
         [reusableView.authorImageView sd_setImageWithURL:[NSURL stringAppendingToURLWithString:_dataDic[@"userimageid"]]];
         reusableView.recipeCountLabel.text = [NSString stringWithFormat:@"菜谱(%ld)", _collectionListArray.count];
+        
         return reusableView;
     } else {
         CollectionSortDrtailFooterView *reusableView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"CommentTableViewModel" forIndexPath:indexPath];

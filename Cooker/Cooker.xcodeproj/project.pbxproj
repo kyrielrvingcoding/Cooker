@@ -63,6 +63,10 @@
 		77937A001CC755D0009DE91B /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 779379FF1CC755D0009DE91B /* RecipeDetailViewController.m */; };
 		77937A121CC755EF009DE91B /* RecipeDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 77937A051CC755EF009DE91B /* RecipeDetailHeaderView.m */; };
 		77937A131CC755EF009DE91B /* RecipeDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77937A061CC755EF009DE91B /* RecipeDetailHeaderView.xib */; };
+		77D7132B1CC9B14C00ED3CF7 /* PlayVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D713291CC9B14C00ED3CF7 /* PlayVIew.m */; };
+		77D7132C1CC9B14C00ED3CF7 /* PlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77D7132A1CC9B14C00ED3CF7 /* PlayView.xib */; };
+		77D7132F1CC9B18100ED3CF7 /* NSTimer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D7132E1CC9B18100ED3CF7 /* NSTimer+Addition.m */; };
+		77D713321CC9B19300ED3CF7 /* AVPlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D713311CC9B19300ED3CF7 /* AVPlayerController.m */; };
 		792B7AEF1CC5C693001C5593 /* RegistNothingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 792B7AED1CC5C693001C5593 /* RegistNothingViewController.m */; };
 		792B7AF01CC5C693001C5593 /* RegistNothingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B7AEE1CC5C693001C5593 /* RegistNothingViewController.xib */; };
 		792B7D951CC66689001C5593 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 792B7D921CC66689001C5593 /* CycleScrollView.m */; };
@@ -231,6 +235,13 @@
 		77937A2E1CC77112009DE91B /* StepListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepListModel.m; sourceTree = "<group>"; };
 		77937A301CC77129009DE91B /* materialListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = materialListModel.h; sourceTree = "<group>"; };
 		77937A311CC77129009DE91B /* materialListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = materialListModel.m; sourceTree = "<group>"; };
+		77D713281CC9B14C00ED3CF7 /* PlayVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayVIew.h; sourceTree = "<group>"; };
+		77D713291CC9B14C00ED3CF7 /* PlayVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayVIew.m; sourceTree = "<group>"; };
+		77D7132A1CC9B14C00ED3CF7 /* PlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayView.xib; sourceTree = "<group>"; };
+		77D7132D1CC9B18100ED3CF7 /* NSTimer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Addition.h"; sourceTree = "<group>"; };
+		77D7132E1CC9B18100ED3CF7 /* NSTimer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Addition.m"; sourceTree = "<group>"; };
+		77D713301CC9B19300ED3CF7 /* AVPlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVPlayerController.h; sourceTree = "<group>"; };
+		77D713311CC9B19300ED3CF7 /* AVPlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVPlayerController.m; sourceTree = "<group>"; };
 		792B7AEC1CC5C693001C5593 /* RegistNothingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistNothingViewController.h; sourceTree = "<group>"; };
 		792B7AED1CC5C693001C5593 /* RegistNothingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistNothingViewController.m; sourceTree = "<group>"; };
 		792B7AEE1CC5C693001C5593 /* RegistNothingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistNothingViewController.xib; sourceTree = "<group>"; };
@@ -453,6 +464,8 @@
 				7708A5591CC5CA870037F210 /* UIView+ChangeFrame.m */,
 				1C213EDC1CC6525100AC6AF7 /* NSURL+AppendingURL.h */,
 				1C213EDD1CC6525100AC6AF7 /* NSURL+AppendingURL.m */,
+				77D7132D1CC9B18100ED3CF7 /* NSTimer+Addition.h */,
+				77D7132E1CC9B18100ED3CF7 /* NSTimer+Addition.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -664,6 +677,8 @@
 		772F55A71CC536400048F287 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				77D713301CC9B19300ED3CF7 /* AVPlayerController.h */,
+				77D713311CC9B19300ED3CF7 /* AVPlayerController.m */,
 				7708A5A41CC5E05A0037F210 /* VideoViewController.h */,
 				7708A5A51CC5E05A0037F210 /* VideoViewController.m */,
 			);
@@ -673,6 +688,9 @@
 		772F55A81CC536400048F287 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				77D713281CC9B14C00ED3CF7 /* PlayVIew.h */,
+				77D713291CC9B14C00ED3CF7 /* PlayVIew.m */,
+				77D7132A1CC9B14C00ED3CF7 /* PlayView.xib */,
 				7935F6081CC8D4F000D6842A /* VideoTableViewCell.h */,
 				7935F6091CC8D4F000D6842A /* VideoTableViewCell.m */,
 				7935F60A1CC8D4F000D6842A /* VideoTableViewCell.xib */,
@@ -776,9 +794,9 @@
 				1C213EB51CC6092400AC6AF7 /* CollectionSortListModelCell.h */,
 				1C213EB61CC6092400AC6AF7 /* CollectionSortListModelCell.m */,
 				1C213EB81CC6094700AC6AF7 /* CollectionSortListModelCell.xib */,
-				1C213ED31CC6352000AC6AF7 /* CollectionSortDetailModelCell.h */,
 				1C213ED41CC6352000AC6AF7 /* CollectionSortDetailModelCell.m */,
 				1C213EDF1CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.h */,
+				1C213ED31CC6352000AC6AF7 /* CollectionSortDetailModelCell.h */,
 				1C213EE01CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.m */,
 				1C213EE11CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.xib */,
 				1C213EE41CC679B000AC6AF7 /* CollectionSortDrtailFooterView.h */,
@@ -923,6 +941,7 @@
 				7935F5FC1CC8B6AE00D6842A /* SnackDetailModelCell.xib in Resources */,
 				772F55741CC535A20048F287 /* Main.storyboard in Resources */,
 				799369491CC7335D00B06600 /* HomeSelectionDetailViewController.xib in Resources */,
+				77D7132C1CC9B14C00ED3CF7 /* PlayView.xib in Resources */,
 				1C213EE31CC65EDF00AC6AF7 /* CollectionSortDetailReusableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1055,8 +1074,11 @@
 				7935F60B1CC8D4F000D6842A /* VideoTableViewCell.m in Sources */,
 				7935F5E91CC8776B00D6842A /* MyselfViewController.m in Sources */,
 				7935F6111CC8D57000D6842A /* RecipeDetailModel.m in Sources */,
+				77D7132B1CC9B14C00ED3CF7 /* PlayVIew.m in Sources */,
+				77D7132F1CC9B18100ED3CF7 /* NSTimer+Addition.m in Sources */,
 				1C213ED51CC6352000AC6AF7 /* CollectionSortDetailModelCell.m in Sources */,
 				1C213EBF1CC6142900AC6AF7 /* BaseTabBarController.m in Sources */,
+				77D713321CC9B19300ED3CF7 /* AVPlayerController.m in Sources */,
 				7708A59D1CC5E0230037F210 /* HomeViewController.m in Sources */,
 				7935F6051CC8B76B00D6842A /* SnackDetailModelCell.m in Sources */,
 				1C213EE71CC679B000AC6AF7 /* CollectionSortDrtailFooterView.m in Sources */,

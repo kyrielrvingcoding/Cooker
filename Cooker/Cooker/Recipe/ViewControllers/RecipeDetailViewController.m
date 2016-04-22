@@ -12,6 +12,8 @@
 #import "RecipeDetailStepCell.h"
 #import "RecipeDetailModel.h"
 
+#import "AVPlayerController.h"
+#import "AppDelegate.h"
 static CGFloat kImageHeight = 200;
 static NSString *headerReuseIdentifier = @"headerReuseIdentifier";
 static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
@@ -40,9 +42,10 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
         _headerView.frame = CGRectMake(0, -kImageHeight , SCREENWIDTH, kImageHeight + 35);
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.frame = CGRectMake(0, 0, 40, 40);
-        button.center = _headerView.center;
-        button.imageView.image = [UIImage imageNamed:@"提示"];
-        [_headerView addSubview:button];
+        CGPoint center = CGPointMake(_headerView.size.width / 2.0, _headerView.frame.size.height / 2.0);
+        button.center = center;
+        [button setImage:[UIImage imageNamed:@"提示"] forState:UIControlStateNormal];
+        [self.headerView addSubview:button];
         [button addTarget:self action:@selector(changeVideoVc) forControlEvents:UIControlEventTouchUpInside];
 
         _headerView.backgroundColor = [UIColor grayColor];
@@ -73,18 +76,21 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
      NSDictionary *parameter = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"ids":self.ID};
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
+    NSDictionary *parameter1 = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"listStr":self.ID};
     //判断是是否是视频
-    [manager POST:HASVIDEO_URL parameters:parameter progress:^(NSProgress * _Nonnull uploadProgress) {
+    [manager POST:HASVIDEO_URL parameters:parameter1 progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary  *dic = [responseObject[@"list"] lastObject];
-        BOOL isHas = dic[@"hasVideo"];
-        if (!isHas) {
+        BOOL isVideo = [dic[@"hasVideo"] boolValue];
+        if (!isVideo) {
             for (UIView *view in self.headerView.subviews) {
                 if ([view isKindOfClass:[UIButton class]]) {
                     view.hidden = YES;
                 }
             }
+        } else {
+            [self getPlayUrl];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -122,10 +128,21 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
     self.navigationController.navigationBar.translucent = NO;
     [self.view addSubview:self.tableView];
     [self.tableView addSubview:self.headerView];
-    
 }
 
-
+- (void)getPlayUrl {
+    NSDictionary *parameter2 = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"project":self.ID};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+   [manager POST:GETPLAYURL_URL parameters:parameter2 progress:^(NSProgress * _Nonnull uploadProgress) {
+       
+   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       _recipeDetailModel.playUrl = [NSString stringWithFormat:@"%@%@",responseObject[@"urlprefix"],responseObject[@"name"]];
+       
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       
+   }];
+}
 
 
 
@@ -190,7 +207,15 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
 
 #pragma mark -------------------点击头视图button时，进行跳转
 - (void)changeVideoVc {
-    NSLog(@"跳转到视频界面");
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    delegate.is_flip = YES;
+    AVPlayerController *avPlayC = [[AVPlayerController alloc] init];
+    avPlayC.model = _recipeDetailModel;
+    if (!_recipeDetailModel.playUrl) {
+        [self getPlayUrl];
+        return;
+    }
+    [self.navigationController presentViewController:avPlayC animated:YES completion:nil];
 }
 
 #pragma mark -------------------scrollView 代理方法
@@ -201,21 +226,27 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
     CGFloat yOffset = scrollView.contentOffset.y;
     //修改x的值
     CGFloat xOffset = (yOffset + kImageHeight) / 2;
+//    CGFloat xOffset =  SCREENWIDTH /(kImageHeight + 35) * yOffset;
     if (yOffset < -200) {
         CGRect f = self.headerView.frame;
         f.origin.y = yOffset;
         f.size.height = -yOffset + 35;
         f.origin.x = xOffset;
+        NSLog(@"%f",xOffset);
+        NSLog(@"%f",yOffset);
         f.size.width = SCREENWIDTH + fabs(xOffset) * 2;
         self.headerView.frame = f;
 
         for (UIView *view in self.headerView.subviews) {
             if ([view isKindOfClass:[UIButton class]]) {
-                view.center = self.headerView.center;
+              CGPoint center = CGPointMake(self.headerView.size.width / 2, f.size.height / 2);
+                view.center = center;
             }
         }
     }
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     
