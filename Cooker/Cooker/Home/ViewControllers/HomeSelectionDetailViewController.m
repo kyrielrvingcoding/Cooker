@@ -8,7 +8,6 @@
 
 #import "HomeSelectionDetailViewController.h"
 #import "HomeRecipeModel.h"
-#import "HomeSelectionDetailViewController.h"
 #import "HomeRecipeModelCell.h"
 #import "RecipeDetailViewController.h"
 
@@ -37,7 +36,7 @@
     if (!_ID) {
         parameter = @{@"version":@"12.2.1.0",@"type":@"recipe"};
     } else {
-    parameter = @{@"version":@"12.2.1.0", @"type":@"recipe", @"id":_ID};
+         parameter = @{@"version":@"12.2.1.0", @"type":@"recipe", @"id":_ID};
     }
     
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -57,23 +56,33 @@
         
         [_collectionView reloadData];
         [self.collectionView reloadData];
+        [self.collectionView.mj_header endRefreshing];
+        [self performSelector:@selector(delay) withObject:nil afterDelay:1];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //        NSLog(@"error = %@",error);
     }];
     
 }
+- (void)delay {
+    [self stopAnimation];
+    [self.collectionView reloadData];
+}
 
-
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self startAnimation];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //请求数据
-    [self requestData];
+    self.navigationController.navigationBar.translucent = NO;
+
     //创建每日菜单
     [self createEverydayListLayoutView];
-    
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    //请求数据
     _ID = nil;
     [self requestData];
+    self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestData)];
     
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(requestMoreData)];
     
@@ -89,24 +98,23 @@
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     //最小行间距
-    layout.minimumLineSpacing = 30;
+    layout.minimumLineSpacing = 20;
     //最小列间距
     layout.minimumInteritemSpacing = 10;
     //滚动方向
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     //item的大小
-    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, 270 );
+    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, SCREENWIDTH / 2 + 40);
     //边距
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, NAVIGATIONBARHEIGHT + 20, SCREENWIDTH, SCREENHEIGHT - 109) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - 49) collectionViewLayout:layout];
     
     _collectionView.backgroundColor = [UIColor clearColor];
     
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    _collectionView.bounces = NO;
     //防止偏移的
     self.automaticallyAdjustsScrollViewInsets = NO;
     
