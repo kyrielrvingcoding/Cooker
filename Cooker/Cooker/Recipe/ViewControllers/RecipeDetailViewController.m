@@ -12,6 +12,8 @@
 #import "RecipeDetailStepCell.h"
 #import "RecipeDetailModel.h"
 
+#import "AVPlayerController.h"
+#import "AppDelegate.h"
 static CGFloat kImageHeight = 200;
 static NSString *headerReuseIdentifier = @"headerReuseIdentifier";
 static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
@@ -75,13 +77,15 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         NSDictionary  *dic = [responseObject[@"list"] lastObject];
-        BOOL isHas = dic[@"hasVideo"];
-        if (!isHas) {
+        BOOL isVideo = [dic[@"hasVideo"] boolValue];
+        if (!isVideo) {
             for (UIView *view in self.headerView.subviews) {
                 if ([view isKindOfClass:[UIButton class]]) {
                     view.hidden = YES;
                 }
             }
+        } else {
+            [self getPlayUrl];
         }
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -114,7 +118,19 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
     [self.tableView addSubview:self.headerView];
 }
 
-
+- (void)getPlayUrl {
+    NSDictionary *parameter2 = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"project":self.ID};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+   [manager POST:GETPLAYURL_URL parameters:parameter2 progress:^(NSProgress * _Nonnull uploadProgress) {
+       
+   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       _recipeDetailModel.playUrl = [NSString stringWithFormat:@"%@%@",responseObject[@"urlprefix"],responseObject[@"name"]];
+       
+   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+       
+   }];
+}
 
 
 
@@ -179,7 +195,15 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
 
 #pragma mark -------------------点击头视图button时，进行跳转
 - (void)changeVideoVc {
-    NSLog(@"跳转到视频界面");
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    delegate.is_flip = YES;
+    AVPlayerController *avPlayC = [[AVPlayerController alloc] init];
+    avPlayC.model = _recipeDetailModel;
+    if (!_recipeDetailModel.playUrl) {
+        [self getPlayUrl];
+        return;
+    }
+    [self.navigationController presentViewController:avPlayC animated:YES completion:nil];
 }
 
 #pragma mark -------------------scrollView 代理方法
@@ -209,6 +233,8 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
         }
     }
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

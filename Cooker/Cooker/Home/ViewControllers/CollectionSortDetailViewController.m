@@ -99,6 +99,8 @@
     _layout.minimumInteritemSpacing = 10;
     _layout.itemSize =  CGSizeMake((SCREENWIDTH - 45) / 3, (SCREENWIDTH - 45) / 3 + 25);
     _layout.sectionInset = UIEdgeInsetsMake(0, 10, 0, 10);
+    _layout.itemSize = CGSizeMake((SCREENWIDTH - 45) / 3, (SCREENWIDTH - 45) / 3 + 25);
+    _layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     _collectionView = [[UICollectionView alloc] initWithFrame:SCREENBOUNDS collectionViewLayout:_layout];
 
     _collectionView.backgroundColor = [UIColor redColor];

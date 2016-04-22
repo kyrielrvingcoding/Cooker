@@ -24,4 +24,5 @@
 @property (nonatomic, copy) NSString *name;//菜名
 @property (nonatomic, copy) NSString *version;
 @property (nonatomic, copy) NSString *tipList;//小贴士
+@property (nonatomic, copy) NSString *playUrl;//播放的链接
 @end

@@ -18,7 +18,8 @@
 @interface VideoViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *dataArray;
 @property (nonatomic, strong) UITableView *tableView;
-
+@property (nonatomic, assign) int page;//上啦加载时的参数
+@property (nonatomic, strong) NSString *ID;
 @end
 static NSString *VideoTableViewCellIdentifier  = @"VideoTableViewCellCellIdentifier";
 @implementation VideoViewController
@@ -32,7 +33,7 @@ static NSString *VideoTableViewCellIdentifier  = @"VideoTableViewCellCellIdentif
 
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - 49) style:(UITableViewStylePlain)];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT) style:(UITableViewStylePlain)];
         [_tableView registerNib:[UINib nibWithNibName:@"VideoTableViewCell" bundle:nil] forCellReuseIdentifier:VideoTableViewCellIdentifier];
         _tableView.dataSource = self;
         _tableView.delegate = self;
@@ -53,8 +54,9 @@ static NSString *VideoTableViewCellIdentifier  = @"VideoTableViewCellCellIdentif
         NSArray *ListArray = dic[@"list"];
         NSDictionary *ListDic = [ListArray lastObject];
         NSString *ID = ListDic[@"id"];
-        
-       NSDictionary *parameter1 = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"id":ID};
+        _ID = ID;
+        NSNumber *number = [NSNumber numberWithInt:_page];
+       NSDictionary *parameter1 = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"id":ID,@"page":number};
         [manager POST:SUBCLASS_URL parameters:parameter1 progress:^(NSProgress * _Nonnull uploadProgress) {
             
         } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -74,11 +76,52 @@ static NSString *VideoTableViewCellIdentifier  = @"VideoTableViewCellCellIdentif
     }];
 }
 
+- (void)requestDataByBool:(BOOL)isRefersh {
+
+    if (isRefersh) {
+        _page = 0;
+    }
+    NSNumber *number = [NSNumber numberWithInt:_page];
+    NSDictionary *parameter1 = @{@"version":@"12.2.1.0",@"machine":@"O382baa3c128b3de78ff6bbcd395b2a27194b01ad",@"device":@"iPhone8%2C1",@"id":_ID, @"page":number};
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    [manager POST:SUBCLASS_URL parameters:parameter1 progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSArray *mainArray = responseObject[@"list"];
+        if (isRefersh) {
+            [self.dataArray removeAllObjects];
+        }
+        
+        for (NSDictionary *mainDic in mainArray) {
+            VideoModel *model = [[VideoModel alloc] init];
+            [model setValuesForKeysWithDictionary:mainDic];
+            [self.dataArray addObject:model];
+        }
+        if (mainArray.count == 0) {
+            [self.tableView.mj_footer  endRefreshingWithNoMoreData];
+        } else {
+            [self.tableView.mj_footer endRefreshing];
+        }
+        [self.tableView.mj_header endRefreshing];
+        [self.tableView reloadData];
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        
+    }];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _page = 0;
     self.navigationItem.title = @"中华小当家";
     [self requestData];
-
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [self requestDataByBool:YES];
+    }];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        _page++;
+        [self requestDataByBool:NO];
+    }];
     
     
 }
