@@ -31,9 +31,9 @@
 //创建过渡动画
 - (void)createAnimationForTansition {
     
-    _containerView = [[UIView alloc] initWithFrame:self.view.bounds];
+    _containerView = [[UIView alloc] initWithFrame:SCREENBOUNDS];
     _containerView.backgroundColor = [UIColor whiteColor];
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0 , 0, SCREENWIDTH,SCREENHEIGHT)];
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(140 , 200, 120,120)];
     [_containerView addSubview:_imageView];
     //设置动画帧
     _imageView.animationImages=[NSArray arrayWithObjects:
@@ -56,20 +56,20 @@
     Infolabel.backgroundColor = [UIColor clearColor];
     Infolabel.textAlignment = NSTextAlignmentCenter;
     Infolabel.textColor = [UIColor colorWithRed:84.0/255 green:86./255 blue:212./255 alpha:1];
-    Infolabel.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:10.0f];
-    Infolabel.text = @"正在努力加载";
+    Infolabel.font = [UIFont fontWithName:@"ChalkboardSE-Bold" size:12.0f];
+    Infolabel.text = @"正在努力加载……";
     [_containerView addSubview:Infolabel];
     
     [self.view addSubview:_containerView];
     
     
 }
+//开始动画
 -(void)startAnimation{
     [self createAnimationForTansition];
     [self.view bringSubviewToFront:_containerView];
 }
-
-
+//停止动画
 -(void)stopAnimation{
     [_imageView stopAnimating];
     [_containerView removeFromSuperview];

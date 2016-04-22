@@ -27,11 +27,15 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
 
 @implementation RecipeDetailViewController
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self startAnimation];
+}
+
 - (UIImageView *)headerView {
     if (_headerView == nil) {
         _headerView = [[UIImageView alloc] init];
         _headerView.userInteractionEnabled = YES;
-        //把)headerView方法tableView的上面
+        //把headerView方法tableView的上面
         _headerView.frame = CGRectMake(0, -kImageHeight , SCREENWIDTH, kImageHeight + 35);
         UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
         button.frame = CGRectMake(0, 0, 40, 40);
@@ -98,10 +102,17 @@ static NSString *RecipeDetailStepCellReuseIdentifier = @"RecipeDetailStepCell";
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.headerView sd_setImageWithURL:[NSURL stringAppendingToURLWithString:_recipeDetailModel.imageid]];
             [self.tableView reloadData];
+            //延时
+            [self performSelector:@selector(delay) withObject:nil afterDelay:1];
         });
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         //错误的方法
     }];
+}
+
+- (void)delay {
+    [self stopAnimation];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {

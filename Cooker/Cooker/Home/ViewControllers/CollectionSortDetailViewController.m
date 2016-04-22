@@ -75,6 +75,8 @@
         }
         _layout.footerReferenceSize = CGSizeMake(SCREENWIDTH, 100 * (self.commentListArray.count + 1));
         [self.collectionView reloadData];
+        //延时
+        [self performSelector:@selector(delay) withObject:nil afterDelay:1];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         
     }];
@@ -89,6 +91,13 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self startAnimation];
+}
+- (void)delay {
+    [self stopAnimation];
+    [self.collectionView reloadData];
+}
 
 #pragma mark ------collectionView------
 

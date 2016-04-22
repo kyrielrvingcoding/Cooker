@@ -17,6 +17,9 @@
 #import "CollectionSortListModelCell.h"
 #import "RecipeDetailViewController.h"
 #import "CollectionSortDetailViewController.h"
+#define kColletionViewHeight (SCREENWIDTH / 2 + 40)
+#define kTotalCollectionViewHeight ((_everydayRecipeArray.count + 1)/2 * kColletionViewHeight)
+#define kTotalTableViewHeight (350 * _selectionArray.count)
 
 @interface HomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource>
 
@@ -102,8 +105,14 @@
         
         //轮播图
         [self createCycleScrollView];
+        _collectionView.frame = CGRectMake(0, _cycleScrollView.frame.size.height + 40, SCREENWIDTH, kTotalCollectionViewHeight);
+        _tableView.frame = CGRectMake(0, _cycleScrollView.frame.size.height + 80 + kTotalCollectionViewHeight, SCREENWIDTH, kTotalTableViewHeight);
+        _rootScrollView.contentSize = CGSizeMake(SCREENWIDTH,  280 + kTotalCollectionViewHeight + kTotalTableViewHeight);
+        
         [self.tableView reloadData];
         [self.collectionView reloadData];
+        
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
 //        NSLog(@"error = %@",error);
     }];
@@ -112,9 +121,9 @@
 
 //创建RootScrollView
 - (void)createRootScrollView {
-    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, SCREENWIDTH, SCREENHEIGHT - 49)];
+    _rootScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGHT - 49)];
     _rootScrollView.delegate = self;
-    _rootScrollView.contentSize = CGSizeMake(SCREENWIDTH,  2864);
+    _rootScrollView.contentSize = CGSizeZero;
     _rootScrollView.contentOffset = CGPointMake(0, 0);
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.view addSubview:_rootScrollView];
@@ -125,8 +134,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    //请求数据
-    [self requestData];
+   
     //创建滚动视图
     [self createRootScrollView];
 
@@ -140,6 +148,11 @@
     [self createSelectionList];
     //创建TableView头视图
     [self creatTableViewHeaderView];
+    
+    //请求数据
+    [self requestData];
+    
+    self.navigationController.navigationBar.translucent = NO;
     
 }
 
@@ -173,7 +186,7 @@
 //创建CollectionView头视图
 - (void)createCollectionHeaderView{
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 274, SCREENWIDTH, 40)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 210, SCREENWIDTH, 40)];
     UIImageView *leftImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 0, 10, view.frame.size.height-5)];
     leftImageView.backgroundColor = [UIColor orangeColor];
     leftImageView.layer.cornerRadius = 5;
@@ -244,7 +257,7 @@
 //创建轮播图
 - (void)createCycleScrollView {
     
-    _cycleScrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, NAVIGATIONBARHEIGHT + 20, SCREENWIDTH, 200) animationDuration:2];
+    _cycleScrollView = [[CycleScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREENWIDTH, 200) animationDuration:2];
     NSMutableArray *viewsArray = [@[] mutableCopy];
     
     for (int i = 0; i < _carouselArray.count; i ++) {
@@ -255,6 +268,12 @@
         [imageView sd_setImageWithURL:[NSURL stringAppendingToURLWithString:model.imageid]];
         [viewsArray addObject:imageView];
     }
+    if(viewsArray.count < 2) {
+    
+        [_rootScrollView addSubview:viewsArray.lastObject];
+    
+    } else {
+    
     [_rootScrollView addSubview:_cycleScrollView];
     
     _cycleScrollView.fetchContentViewAtIndex = ^UIView *(NSInteger pageIndex) {
@@ -275,12 +294,12 @@
                 recipeDetailVC.ID = ID;
                 [homeVC.navigationController pushViewController:recipeDetailVC animated:YES];
     };
-    
+    }
+
 }
 
 //创建每日菜单
 - (void)createEverydayListLayoutView {
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     //最小行间距
@@ -290,18 +309,20 @@
     //滚动方向
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     //item的大小
-    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, SCREENWIDTH / 2 + 40);
+    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, kColletionViewHeight);
     //边距
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.sectionInset = UIEdgeInsetsMake(0, 10, 10, 0);
     
     
-    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 304, SCREENWIDTH, 1200) collectionViewLayout:layout];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
     
     _collectionView.backgroundColor = [UIColor clearColor];
     
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.bounces = NO;
+    _collectionView.scrollEnabled = NO;
+    
     //防止偏移的
     self.automaticallyAdjustsScrollViewInsets = NO;
 
@@ -316,7 +337,7 @@
 - (void)createSelectionList{
     //防止偏移的
     self.automaticallyAdjustsScrollViewInsets = NO;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 1504 , SCREENWIDTH, 1360) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.bounces = NO;

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 class17. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface HomeSelectionDetailViewController : UIViewController
+@interface HomeSelectionDetailViewController : BaseViewController
 
 @end
