@@ -8,7 +8,6 @@
 
 #import "HomeSelectionDetailViewController.h"
 #import "HomeRecipeModel.h"
-#import "HomeSelectionDetailViewController.h"
 #import "HomeRecipeModelCell.h"
 #import "RecipeDetailViewController.h"
 
@@ -66,12 +65,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     //请求数据
     [self requestData];
     //创建每日菜单
     [self createEverydayListLayoutView];
     
-    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     _ID = nil;
     [self requestData];
     
@@ -89,13 +89,13 @@
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     //最小行间距
-    layout.minimumLineSpacing = 30;
+    layout.minimumLineSpacing = 20;
     //最小列间距
     layout.minimumInteritemSpacing = 10;
     //滚动方向
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     //item的大小
-    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, 270 );
+    layout.itemSize = CGSizeMake(SCREENWIDTH / 2 - 15, SCREENWIDTH / 2 + 40);
     //边距
     layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     
